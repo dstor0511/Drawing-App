@@ -7,7 +7,7 @@ function StampTool (){
     var sticker = loadImage("assets/sticker.png");
 
     this.sliders = function(){
-        stickerSliderSize.parent.class(".options")
+        stickerSliderSize.parent(select(".options"))
 
     };
 
