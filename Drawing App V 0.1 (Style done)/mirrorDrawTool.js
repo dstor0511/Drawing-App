@@ -121,7 +121,7 @@ function mirrorDrawTool() {
 	this.populateOptions = function() {
 		select(".options").html(
 			"<button id='directionButton'>Make Horizontal</button>");
-		// 	//click handler
+			// click handler
 		select("#directionButton").mouseClicked(function() {
 			var button = select("#" + this.elt.id);
 			if (self.axis == "x") {
