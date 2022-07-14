@@ -102,6 +102,11 @@ html, body {
   .options{
 	  grid-area: options;
 	  padding: 15px;
+	  position: relative;
+	  right: 500px;
+	  width: 500px;
+	  height: 90px;
+	  border-radius: 5px;
   }
   
   .colourSwatches{
