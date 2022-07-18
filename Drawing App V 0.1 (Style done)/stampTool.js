@@ -7,6 +7,7 @@ function StampTool (){
     // var stickerSliderSize = createSlider(5, 50, 20);
     this.sticker = loadImage("assets/sticker.png");
 
+    /*
     this.sliders = function(){
         // stickerSliderSize.parent(select(".options"))
         select(".options").html("<input type='range' min='5' max='50' value='20' class='slider' id='stickerSliderSize'>")
@@ -18,6 +19,7 @@ function StampTool (){
 
         })
     };
+    */
 
     this.draw = function(){
        
