@@ -6,6 +6,11 @@ var helpers = null;
 
 //spray can object literal
 
+// preload the images that are to be used in the stampTool
+function preload(){
+	sticker = loadImage('assets/sticker.png');
+}
+
 function setup() {
 
 	//create a canvas to fill the content div from index.html

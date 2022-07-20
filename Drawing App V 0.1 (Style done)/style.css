@@ -73,6 +73,9 @@ html, body {
 	grid-area: footer;
   }
   
+  #controls{
+	color: black;
+  }
   .sideBarItem{
 	  max-height: 50px;
 	  max-width: 50px;
@@ -136,3 +139,5 @@ html, body {
 	background-color: rgb(240, 240, 240);
 	color: rgb(0, 0, 0);
   }
+
+
