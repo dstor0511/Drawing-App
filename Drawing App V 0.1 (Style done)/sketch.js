@@ -4,8 +4,6 @@ var toolbox = null;
 var colourP = null;
 var helpers = null;
 
-//spray can object literal
-
 // preload the images that are to be used in the stampTool
 function preload(){
 	sticker = loadImage('assets/sticker.png');
