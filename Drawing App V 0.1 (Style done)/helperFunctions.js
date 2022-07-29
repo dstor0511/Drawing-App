@@ -18,4 +18,13 @@ function HelperFunctions() {
 	select("#saveImageButton").mouseClicked(function() {
 		saveCanvas("myPicture", "jpg");
 	});
-}
+};
+
+// This function checks for drawings only on the canvas
+function mouseClickedOnCanvas(){
+	if(mouseX > 0 && mouseX < (0 + width) && mouseY > 0 && mouseY < (0 + height))
+	{
+		return true;
+	};
+	return false;
+};

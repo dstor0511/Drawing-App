@@ -13,9 +13,10 @@ function StampTool (){
 
     this.draw = function(){
        
-        if (mouseIsPressed){
+        if (mouseIsPressed && mouseClickedOnCanvas()){
 
             image(sticker,mouseX, mouseY, this.sizeSlider.value(), this.sizeSlider.value());
+            console.log(typeof(this.spanValue));
             // ---------------- Test code ---------------- 
                 // In progess variables that will make the sticker center
                 //  upon the mouse x and y. 
@@ -24,43 +25,39 @@ function StampTool (){
                 // stickerY = mouseY - (sticker.height/2)
             // ---------------- Test code ---------------- 
 
-            // ---------------- Test code ---------------- 
-                // With this code it is intended to "upload" the 
-                // if (this.img) {
-                //     image(this.img, 100, 100, this.sizeSlider.value(), this.sizeSlider.value());    
-                //     console.log(this.img);
-                // };
-            // ---------------- Test code ---------------- 
-
         };
     };
 
-    // ---------------- Test code ----------------
-    // This function will handle the input data from the user and if it's an image will create a p5 Image object
-    this.handleFile= function(file){
-        print(file);
-        if (file.type === 'image') {
-          this.img = createImg(file.data, '');
-          this.img.hide();
-        } else {
-          this.img = null;
-        }
-    };
-    // ---------------- Test code ---------------- 
-    
     this.populateOptions = function(){
 
-        this.sizeText = createDiv("Size: ");
+        // Text created to the DOM when the extension is selected
+        this.sizeText = createDiv("Size: " + this.sizeSpan);
         this.sizeText.parent("#controls");
+        this.sizeText.addClass("stampOtionsText");
 
+        // Create Span
+        this.sizeSpan = createSpan();
+        this.sizeSpan.parent("#controls");
+
+        // Slide created to the DOM when the extension is selected
         this.sizeSlider = createSlider(20, 100, 50);
         this.sizeSlider.parent("#controls");
+        this.sizeSlider.addClass("stampOtionsSlider");
+        
+        
+        // This stores the value of the slider
+        this.sliderValue = this.sizeSlider.value();
 
-        // ---------------- Test code ---------------- 
-        // This code creates the HTML div for the tool
-        upload = createFileInput(this.handleFile);
-        upload.parent("#controls"); 
-        // ---------------- Test code ---------------- 
+        // This stores the span html inner value
+        this.spanValue = this.sizeSpan.html();
+
+        // This function should update the value of the span but 
+        // its not doing it
+        this.sizeSlider.oninput = function() {
+            sizeSpan.innerHTML = this.value;
+            // this.spanValue = this.sliderValue;
+          }
+
     }
 
     this.unselectTool = function(){
