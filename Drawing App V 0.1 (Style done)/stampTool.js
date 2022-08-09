@@ -1,66 +1,91 @@
-function StampTool (){
-    // set an icon and name for the constructor function
-    this.icon = "assets/sticker.png";
-    this.name = "stamp";
+function StampTool() {
+  // set an icon and name for the constructor function
+  this.icon = "assets/sticker.png";
+  this.name = "stamp";
 
-    // ---------------- Test code ---------------- 
-    // Variables that will control the input img by the user
-    this.upload;
-    this.img;
-    // ---------------- Test code ---------------- 
+  // ---------------- Test code ----------------
+  // Variables that will control the input img by the user
+  this.upload;
+  this.img;
+  // ---------------- Test code ----------------
 
-    var self = this;
+  var self = this;
 
-    this.draw = function(){
-       
-        if (mouseIsPressed && mouseClickedOnCanvas()){
+  this.draw = function () {
+    if (mouseIsPressed && mouseClickedOnCanvas()) {
+      // First image drawn if selected 
+      if (this.stampSelector.selected() == "Cool"){
+        image(coolStamp, 
+        mouseX,
+        mouseY,
+        this.sizeSlider.value(),
+        this.sizeSlider.value()
+        );
+      }
+      // Second image drawn if selected 
+      else if(this.stampSelector.selected()== "Wow"){
+        image(wowStamp,
+          mouseX,
+          mouseY,
+          this.sizeSlider.value(),
+          this.sizeSlider.value()
+          );
+      }
+      // Third image drawn if selected 
+      else if(this.stampSelector.selected()== "Robot"){
+        image(robotStamp,
+          mouseX,
+          mouseY,
+          this.sizeSlider.value(),
+          this.sizeSlider.value()
+          );
+      }
+      // Fourth image drawn if selected 
+      else if(this.stampSelector.selected()== "Stamp"){
+        image(sticker, 
+          mouseX,
+          mouseY,
+          this.sizeSlider.value(),
+          this.sizeSlider.value()
+          );
 
-            image(sticker,mouseX, mouseY, this.sizeSlider.value(), this.sizeSlider.value());
-            console.log(typeof(this.spanValue));
-            // ---------------- Test code ---------------- 
-                // In progess variables that will make the sticker center
-                //  upon the mouse x and y. 
-                // Issue is that since p5 is using the original image size, not the scaled one.
-                // stickerX = mouseX - (sticker.width/2)
-                // stickerY = mouseY - (sticker.height/2)
-            // ---------------- Test code ---------------- 
+      }
+    }
+  };
 
-        };
+  this.populateOptions = function () {
+    // Text created to the DOM when the extension is selected
+    this.sizeText = createDiv("Size: ");
+    this.sizeText.parent("controls");
+    this.sizeText.id("stampSize")
+
+    // Slide created to the DOM when the extension is selected
+    this.sizeSlider = createSlider(20, 300, 90);
+    this.sizeSlider.parent("stampSize");
+    this.sizeSlider.addClass("stampOtionsSlider");
+
+    // This stores the value of the slider
+    this.sliderValue = this.sizeSlider.value();
+
+
+    // Create div containing the selector
+    this.selectorDiv = createDiv("Choose your fav stamp 🤩:");
+    this.selectorDiv.parent("#controls");
+    this.selectorDiv.id("stampSelectorDiv");
+
+    // Create the selector and assign it to its div
+    this.stampSelector = createSelect();
+    this.stampSelector.parent("stampSelectorDiv");
+    this.stampSelector.id("stampSelector")
+
+    // Fill up the option of the div
+    this.stickerNames = ["Cool", "Wow", "Robot", "Stamp"];
+    for (var i = 0; i < this.stickerNames.length; i++){
+      this.stampSelector.option(this.stickerNames[i]);
     };
+  };
 
-    this.populateOptions = function(){
-
-        // Text created to the DOM when the extension is selected
-        this.sizeText = createDiv("Size: " + this.sizeSpan);
-        this.sizeText.parent("#controls");
-        this.sizeText.addClass("stampOtionsText");
-
-        // Create Span
-        this.sizeSpan = createSpan();
-        this.sizeSpan.parent("#controls");
-
-        // Slide created to the DOM when the extension is selected
-        this.sizeSlider = createSlider(20, 100, 50);
-        this.sizeSlider.parent("#controls");
-        this.sizeSlider.addClass("stampOtionsSlider");
-        
-        
-        // This stores the value of the slider
-        this.sliderValue = this.sizeSlider.value();
-
-        // This stores the span html inner value
-        this.spanValue = this.sizeSpan.html();
-
-        // This function should update the value of the span but 
-        // its not doing it
-        this.sizeSlider.oninput = function() {
-            sizeSpan.innerHTML = this.value;
-            // this.spanValue = this.sliderValue;
-          }
-
-    }
-
-    this.unselectTool = function(){
-        select("#controls").html("");
-    }
-};
+  this.unselectTool = function () {
+    select("#controls").html("");
+  };
+}
