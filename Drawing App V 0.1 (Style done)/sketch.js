@@ -21,7 +21,6 @@ function preload() {
   // Robot icon load
   // <a href="https://www.flaticon.com/free-icons/cool" title="cool icons">Cool icons created by Freepik - Flaticon</a>
   robotStamp = loadImage("assets/robot.png");
-
 }
 
 function setup() {
