@@ -36,7 +36,7 @@ function setup() {
   helpers = new HelperFunctions();
   colourP = new ColourPalette();
 
-  //create a toolbox for storing the tools
+//create a toolbox for storing the tools 
   toolbox = new Toolbox();
 
   //add the tools to the toolbox.

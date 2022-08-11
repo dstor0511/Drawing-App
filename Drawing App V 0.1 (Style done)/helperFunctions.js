@@ -25,4 +25,4 @@ function mouseClickedOnCanvas() {
     return true;
   }
   return false;
-}
+};
