@@ -1,8 +1,11 @@
 //global variables that will store the toolbox colour palette
-//amnd the helper functions
+//and the helper functions
 var toolbox = null;
 var colourP = null;
 var helpers = null;
+
+// variables that will store the images to be used in stamp tool
+var sticker, coolStamp, wowStamp, robotStamp;
 
 // preload the images that are to be used in the stampTool
 function preload() {
@@ -45,11 +48,11 @@ function setup() {
   toolbox.addTool(new SprayCanTool());
   toolbox.addTool(new mirrorDrawTool());
   toolbox.addTool(new StampTool());
-  var cs = new Custom_stamp();
+  var customStmp = new Custom_stamp();
   c.drop((file) => {
-    cs.got(file);
+    customStmp.got(file);
   });
-  toolbox.addTool(cs);
+  toolbox.addTool(customStmp);
   background(255);
 }
 

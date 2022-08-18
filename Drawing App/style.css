@@ -112,6 +112,7 @@ body {
   width: 500px;
   height: 90px;
   border-radius: 5px;
+  font-family: Verdana;
 }
 
 .colourSwatches {
@@ -140,12 +141,6 @@ body {
 .box {
   background-color: rgb(240, 240, 240);
   color: rgb(0, 0, 0);
-}
-
-.stampOtionsText,
-#stampSize,
-#stampSelectorDiv {
-  font-family: Verdana;
 }
 
 #stampSelector {

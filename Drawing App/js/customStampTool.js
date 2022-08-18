@@ -1,3 +1,5 @@
+// !Work in progress ⚠️
+
 function Custom_stamp() {
   //set an icon and a name for the object
   this.icon = "assets/wow.png";
