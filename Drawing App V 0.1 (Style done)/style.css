@@ -17,6 +17,7 @@ body {
 
 #content {
   grid-area: content;
+  width: 1215px;
 }
 
 .header {
@@ -141,11 +142,13 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.stampOtionsText, #stampSize, #stampSelectorDiv {
+.stampOtionsText,
+#stampSize,
+#stampSelectorDiv {
   font-family: Verdana;
 }
 
-#stampSelector{
+#stampSelector {
   position: relative;
   left: 10px;
 }

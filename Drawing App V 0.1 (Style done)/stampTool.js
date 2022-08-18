@@ -8,82 +8,45 @@ function StampTool() {
   this.draw = function () {
     if (mouseIsPressed && mouseClickedOnCanvas()) {
       // First image drawn if selected
-      if (this.stampSelector.selected() == "Cool") {
-        image(
-          coolStamp,
-          mouseX,
-          mouseY,
-          this.sizeSlider.value(),
-          this.sizeSlider.value()
-        );
-      }
       // Second image drawn if selected
-      else if (this.stampSelector.selected() == "Wow") {
-        image(
-          wowStamp,
-          mouseX,
-          mouseY,
-          this.sizeSlider.value(),
-          this.sizeSlider.value()
-        );
+      // if (this.stampSelector.selected() == "Cool") {
+      //   image(
+      //     coolStamp,
+      //     mouseX,
+      //     mouseY,
+      //     this.sizeSlider.value(),
+      //     this.sizeSlider.value()
+      //   );
+      // }
+
+      if (this.selector == "Cool") {
+        image(coolStamp, mouseX, mouseY, this.sliderValue, this.sliderValue);
+      } else if (this.selector.value() == "Wow") {
+        image(wowStamp, mouseX, mouseY, this.sliderValue, this.sliderValue);
       }
       // Third image drawn if selected
-      else if (this.stampSelector.selected() == "Robot") {
-        image(
-          robotStamp,
-          mouseX,
-          mouseY,
-          this.sizeSlider.value(),
-          this.sizeSlider.value()
-        );
+      else if (this.selector.value() == "Robot") {
+        image(robotStamp, mouseX, mouseY, this.sliderValue, this.sliderValue);
       }
       // Fourth image drawn if selected
-      else if (this.stampSelector.selected() == "Stamp") {
-        image(
-          sticker,
-          mouseX,
-          mouseY,
-          this.sizeSlider.value(),
-          this.sizeSlider.value()
-        );
+      else if (this.selector.value() == "Stamp") {
+        image(sticker, mouseX, mouseY, this.sliderValue, this.sliderValue);
       }
     }
   };
 
   this.populateOptions = function () {
     // Text created to the DOM when the extension is selected
-    this.sizeText = createDiv("Size: ");
-    this.sizeText.parent("controls");
-    this.sizeText.id("stampSize");
 
-    // Slide created to the DOM when the extension is selected
-    this.sizeSlider = createSlider(20, 300, 90);
-    this.sizeSlider.parent("stampSize");
-    this.sizeSlider.addClass("stampOtionsSlider");
+    select(".options").html(
+      "<div id='stampSize'>Size:</div>   <input type='range' min='20' max='300' value='90' id='stampOtionsSlider'> <label for='stampList'>Choose a stamp:</label> <select> name='stampList'  id='stampSelector'     <option value='Cool'>Cool</option> <option value='Wow'>Wow</option> <option value='Robot'>Robot</option> <option value='Stamp'>Stamp</option></select>"
+    );
 
-    // This stores the value of the slider
-    this.sliderValue = this.sizeSlider.value();
-
-    // Create div containing the selector
-    this.selectorDiv = createDiv("Choose your fav stamp 🤩:");
-    this.selectorDiv.parent("#controls");
-    this.selectorDiv.id("stampSelectorDiv");
-
-    // Create the selector and assign it to its div
-    this.stampSelector = createSelect();
-    this.stampSelector.parent("stampSelectorDiv");
-    this.stampSelector.id("stampSelector");
-
-    // Fill up the option of the div
-    this.stickerNames = ["Cool", "Wow", "Robot", "Stamp"];
-    for (var i = 0; i < this.stickerNames.length; i++) {
-      this.stampSelector.option(this.stickerNames[i]);
-    }
+    this.sliderValue = select("#stampOtionsSlider").value();
+    this.selector = select("#stampSelector").selected();
   };
 
   this.unselectTool = function () {
-    select("#controls").html("");
+    select(".options").html("");
   };
 }
-
-// hellooooooo

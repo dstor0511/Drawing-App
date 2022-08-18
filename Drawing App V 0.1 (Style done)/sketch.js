@@ -36,7 +36,7 @@ function setup() {
   helpers = new HelperFunctions();
   colourP = new ColourPalette();
 
-//create a toolbox for storing the tools 
+  //create a toolbox for storing the tools
   toolbox = new Toolbox();
 
   //add the tools to the toolbox.
@@ -45,6 +45,11 @@ function setup() {
   toolbox.addTool(new SprayCanTool());
   toolbox.addTool(new mirrorDrawTool());
   toolbox.addTool(new StampTool());
+  var cs = new Custom_stamp();
+  c.drop((file) => {
+    cs.got(file);
+  });
+  toolbox.addTool(cs);
   background(255);
 }
 
