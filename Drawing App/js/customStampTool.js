@@ -2,11 +2,11 @@
 
 function Custom_stamp() {
   //set an icon and a name for the object
-  this.icon = "assets/wow.png";
+  this.icon = "assets/stickers.png";
   this.name = "custom_stamp";
 
   var img;
-  this.im = loadImage("assets/wow.png");
+  this.im = loadImage("assets/stickers.png");
 
   this.draw = function () {
     // draw the right image depending on the size selected

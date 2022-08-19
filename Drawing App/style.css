@@ -82,6 +82,7 @@ body {
   max-height: 50px;
   max-width: 50px;
   padding: 3px;
+  border-radius: 5px;
 }
 .sideBarItem:hover {
   background-color: rgb(200, 200, 200);
@@ -102,6 +103,7 @@ body {
   position: relative;
   left: 5px;
   border-radius: 5px;
+  padding-top: 5px;
 }
 
 .options {
@@ -113,6 +115,7 @@ body {
   height: 90px;
   border-radius: 5px;
   font-family: Verdana;
+  font-size: 20px;
 }
 
 .colourSwatches {
@@ -122,6 +125,7 @@ body {
   max-height: 40px;
   max-width: 40px;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .wrapper {

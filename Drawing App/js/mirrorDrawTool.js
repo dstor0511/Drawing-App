@@ -68,7 +68,7 @@ function mirrorDrawTool() {
     //push the drawing state so that we can set the stroke weight and colour
     push();
     strokeWeight(3);
-    stroke("red");
+    stroke("black");
     //draw the line of symmetry
     if (this.axis == "x") {
       line(width / 2, 0, width / 2, height);

@@ -24,6 +24,10 @@ function preload() {
   // Robot icon load
   // <a href="https://www.flaticon.com/free-icons/cool" title="cool icons">Cool icons created by Freepik - Flaticon</a>
   robotStamp = loadImage("assets/robot.png");
+
+  // Custom Stamp icon load
+  // <a href="https://www.flaticon.com/free-icons/sticker" title="sticker icons">Sticker icons created by iconixar - Flaticon</a>
+  customStamp = loadImage("assets/stickers.png");
 }
 
 function setup() {
