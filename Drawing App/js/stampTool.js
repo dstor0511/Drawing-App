@@ -50,6 +50,7 @@ function StampTool() {
         );
       }
     }
+    console.log(this.sliderValue);
   };
 
   // Here we create all the DOM elemts that will control the size and type of image to be pasted on the Canvas
@@ -58,6 +59,8 @@ function StampTool() {
     select(".options").html(
       "<div id='stampSize'>Size:</div>   <input type='range' min='20' max='300' value='90' id='stampOtionsSlider'>"
     );
+
+    this.sliderValue = select("#stampOtionsSlider").value();
 
     // Create the selector using p5.dom for easines of extracting its value
     this.selector = createSelect();
