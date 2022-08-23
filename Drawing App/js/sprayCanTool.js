@@ -1,6 +1,6 @@
 //spray can object literal
 function SprayCanTool() {
-  (this.name = "sprayCanTool"),
+  (this.name = "SprayCan_Tool"),
     (this.icon = "assets/spray-paint.png"),
     (this.points = 13),
     (this.spread = 10),

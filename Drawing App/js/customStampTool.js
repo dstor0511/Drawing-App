@@ -3,7 +3,7 @@
 function Custom_stamp() {
   //set an icon and a name for the object
   this.icon = "assets/stickers.png";
-  this.name = "custom_stamp";
+  this.name = "Custom_Stamp";
 
   var img;
   this.im = loadImage("assets/stickers.png");

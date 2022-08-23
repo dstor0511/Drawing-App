@@ -19,13 +19,14 @@ function Toolbox() {
     loadPixels();
   };
 
-  //add a new tool icon to the html page
+  //add a new tool icon to the html page and title attirbute to the toolbox item
   var addToolIcon = function (icon, name) {
     var sideBarItem = createDiv("<img src='" + icon + "'></div>");
     sideBarItem.class("sideBarItem");
     sideBarItem.id(name + "sideBarItem");
     sideBarItem.parent("sidebar");
     sideBarItem.mouseClicked(toolbarItemClick);
+    document.getElementById(name + "sideBarItem").title = name;
   };
 
   //add a tool to the tools array
