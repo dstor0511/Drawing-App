@@ -52,11 +52,13 @@ function setup() {
   toolbox.addTool(new SprayCanTool());
   toolbox.addTool(new mirrorDrawTool());
   toolbox.addTool(new StampTool());
+
   var customStmp = new Custom_stamp();
   c.drop((file) => {
     customStmp.got(file);
   });
   toolbox.addTool(customStmp);
+
   background(255);
 }
 
