@@ -32,17 +32,17 @@ function Custom_stamp() {
 
   this.unselectTool = function () {
     select("#options").html("");
+    loadPixels();
   };
 
   this.populateOptions = function () {
     // Here we create some DOM elemts the user is going to interact with when using the stamp tool
-    select("#options").html(
-      "<label id='sliderLabel'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider'>  <input type='text' id='stampTextBox'>"
-    );
-
     // Create a slider, input, and selector variables for easines getting their values
-    this.slider1 = select("#stampSlider");
-    this.sizeText1 = select("#stampTextBox");
+
+    this.slider1text = createDiv("Size: ");
+    this.slider1text.parent("#options");
+    this.slider1 = createSlider(10, 100, 10);
+    this.slider1.parent("#options");
 
     // Assign and update the text box with the value of the slider
     // update the text box with the value of the slider

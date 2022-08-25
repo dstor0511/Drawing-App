@@ -85,5 +85,6 @@ function StampTool() {
 
   this.unselectTool = function () {
     select("#options").html("");
+    loadPixels();
   };
 }
