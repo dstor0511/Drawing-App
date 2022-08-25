@@ -18,8 +18,8 @@ function Custom_stamp() {
         this.final_Img,
         mouseX,
         mouseY,
-        this.slider.value(),
-        this.slider.value()
+        this.slider1.value(),
+        this.slider1.value()
       );
     }
     loadPixels();
@@ -30,30 +30,29 @@ function Custom_stamp() {
     this.tempImg = createImg(file.data, "").hide();
   };
 
+  this.unselectTool = function () {
+    select("#options").html("");
+  };
+
   this.populateOptions = function () {
     // Here we create some DOM elemts the user is going to interact with when using the stamp tool
-    select(".options").html(
+    select("#options").html(
       "<label id='sliderLabel'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider'>  <input type='text' id='stampTextBox'>"
     );
 
     // Create a slider, input, and selector variables for easines getting their values
-    this.slider = select("#stampSlider");
-    this.sizeText = select("#stampTextBox");
+    this.slider1 = select("#stampSlider");
+    this.sizeText1 = select("#stampTextBox");
 
     // Assign and update the text box with the value of the slider
     // update the text box with the value of the slider
-    this.sizeText.value(this.slider.value());
-    this.slider.mouseMoved(function () {
-      self.sizeText.value(self.slider.value());
+    this.sizeText1.value(this.slider1.value());
+    this.slider1.mouseMoved(function () {
+      self.sizeText1.value(self.slider1.value());
     });
     // update the slider with the value of the text box
-    this.sizeText.input(function () {
-      self.slider.value(self.sizeText.value());
+    this.sizeText1.input(function () {
+      self.slider1.value(self.sizeText1.value());
     });
-  };
-
-  this.unselectTool = function () {
-    select(".options").html("");
-    console.log("unselecting tool");
   };
 }

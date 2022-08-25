@@ -56,7 +56,7 @@ function StampTool() {
   // Here we create all the DOM elemts that will control the size and type of image to be pasted on the Canvas
   this.populateOptions = function () {
     // Here we create some DOM elemts the user is going to interact with when using the stamp tool
-    select(".options").html(
+    select("#options").html(
       "<label id='sliderLabel'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider'>  <input type='text' id='stampTextBox'>  <br> <label id='selectorLabel'>Choose a stamp: </label><select id='stampSelector'></select>"
     );
 
@@ -84,6 +84,6 @@ function StampTool() {
   };
 
   this.unselectTool = function () {
-    select(".options").html("");
+    select("#options").html("");
   };
 }
