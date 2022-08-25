@@ -1,7 +1,7 @@
 function StampTool() {
   // set an icon and name for the constructor function
   this.icon = "assets/sticker.png";
-  this.name = "stamp";
+  this.name = "Stamp_Tool";
 
   var self = this;
 
@@ -9,34 +9,35 @@ function StampTool() {
     // If the user clicks in the delimited zone of the Canvas then he will be able to paste the stamp on the canvas
     if (mouseIsPressed && mouseClickedOnCanvas()) {
       // Depending on the value selected on the drop-down a different image will be loaded and its size will depend on the value given by the slider.
-      // Cool value selected image
+
+      // Cool image drawn if selected
       if (this.selector.value() == "Cool") {
         image(
           coolStamp,
           mouseX,
           mouseY,
-          select("#stampOtionsSlider").value(),
-          select("#stampOtionsSlider").value()
+          this.slider.value(),
+          this.slider.value()
         );
       }
-      // Wow value selected image
+      // Wow image drawn if selected
       else if (this.selector.value() == "Wow") {
         image(
           wowStamp,
           mouseX,
           mouseY,
-          select("#stampOtionsSlider").value(),
-          select("#stampOtionsSlider").value()
+          this.slider.value(),
+          this.slider.value()
         );
       }
-      // Robot value selected image
+      // Robot image drawn if selected
       else if (this.selector.value() == "Robot") {
         image(
           robotStamp,
           mouseX,
           mouseY,
-          select("#stampOtionsSlider").value(),
-          select("#stampOtionsSlider").value()
+          this.slider.value(),
+          this.slider.value()
         );
       }
       // Stamp image drawn if selected
@@ -45,28 +46,37 @@ function StampTool() {
           sticker,
           mouseX,
           mouseY,
-          select("#stampOtionsSlider").value(),
-          select("#stampOtionsSlider").value()
+          this.slider.value(),
+          this.slider.value()
         );
       }
     }
-    console.log(this.sliderValue);
   };
 
   // Here we create all the DOM elemts that will control the size and type of image to be pasted on the Canvas
   this.populateOptions = function () {
-    // Here we create a div to show the text "size" and its correspondend slider
-    select(".options").html(
-      "<div id='stampSize'>Size:</div>   <input type='range' min='20' max='300' value='90' id='stampOtionsSlider'>"
+    // Here we create some DOM elemts the user is going to interact with when using the stamp tool
+    select("#options").html(
+      "<label id='sliderLabel'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider'>  <input type='text' id='stampTextBox'>  <br> <label id='selectorLabel'>Choose a stamp: </label><select id='stampSelector'></select>"
     );
 
-    this.sliderValue = select("#stampOtionsSlider").value();
+    // Create a slider, input, and selector variables for easines getting their values
+    this.slider = select("#stampSlider");
+    this.sizeText = select("#stampTextBox");
+    this.selector = select("#stampSelector");
 
-    // Create the selector using p5.dom for easines of extracting its value
-    this.selector = createSelect();
-    this.selector.parent("options");
+    // Assign and update the text box with the value of the slider
+    // update the text box with the value of the slider
+    this.sizeText.value(this.slider.value());
+    this.slider.mouseMoved(function () {
+      self.sizeText.value(self.slider.value());
+    });
+    // update the slider with the value of the text box
+    this.sizeText.input(function () {
+      self.slider.value(self.sizeText.value());
+    });
 
-    // Add the options to the drop-down list
+    // Add the options to the selector
     this.options = ["Wow", "Robot", "Cool", "Stamp"];
     for (var i = 0; i < this.options.length; i++) {
       this.selector.option(this.options[i]);
@@ -74,6 +84,7 @@ function StampTool() {
   };
 
   this.unselectTool = function () {
-    select(".options").html("");
+    select("#options").html("");
+    loadPixels();
   };
 }

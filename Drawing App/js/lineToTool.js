@@ -2,7 +2,7 @@
 function LineToTool() {
   // Set an icon and a name for the object
   this.icon = "assets/diagonal-line.png";
-  this.name = "LineTo";
+  this.name = "Line_Tool";
 
   // To smoothly draw a line we will draw the line from the assigned
   // value of startMouseX to current mouse location. The following values store
