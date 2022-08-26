@@ -54,6 +54,7 @@ function setup() {
   toolbox.addTool(new StampTool());
 
   var customStmp = new Custom_stamp();
+  // This "grabs" the image dropped by the user and stores it in the customStamp final_Img variable
   c.drop((file) => {
     customStmp.got(file);
   });

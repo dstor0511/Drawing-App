@@ -149,9 +149,9 @@ body {
 }
 /* ------------------------------ */
 
-/* Color Palette div Styles */
-#stampSlider,
-#sliderLabel {
+/* STAMP Styles */
+.slider,
+.label {
   position: relative;
   left: 90px;
   bottom: -30px;
@@ -159,7 +159,7 @@ body {
   width: 200px;
 }
 
-#stampSlider {
+.slider {
   -webkit-appearance: none;
   height: 10px;
   background-color: rgba(221, 221, 221, 0.819);
@@ -168,7 +168,7 @@ body {
   margin-top: 5px;
 }
 
-#stampSlider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 15px;
@@ -178,7 +178,7 @@ body {
   cursor: pointer;
 }
 
-#stampTextBox {
+.textBox {
   width: 50px;
   position: relative;
   left: 100px;
