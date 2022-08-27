@@ -9,8 +9,12 @@ function FreehandTool() {
   //we haven't started drawing yet.
   var previousMouseX = -1;
   var previousMouseY = -1;
+  var self = this;
 
   this.draw = function () {
+    // Adjust the stroke of the pencil depending on the value selected on the drop-down
+    strokeWeight(this.fhSlider.value());
+
     //if the mouse is pressed
     if (mouseIsPressed && mouseClickedOnCanvas()) {
       //check if they previousX and Y are -1. set them to the current
@@ -34,5 +38,41 @@ function FreehandTool() {
       previousMouseX = -1;
       previousMouseY = -1;
     }
+  };
+
+  this.populateOptions = function () {
+    // Create Slider Label
+    this.fhLabel = createElement("label", "Size: ");
+    this.fhLabel.parent("#options");
+    this.fhLabel.class("label");
+
+    // Create Slider
+    this.fhSlider = createSlider(1, 100, 1);
+    this.fhSlider.parent("#options");
+    this.fhSlider.class("slider");
+
+    // Create Text input field
+    this.fhInput = createInput("");
+    this.fhInput.parent("#options");
+    this.fhInput.class("textBox");
+
+    // Create DIV that prevents bugs at the moment of changing between tools
+    this.fhDiv = createDiv();
+    this.fhDiv.parent("#options");
+
+    // Assign and update the text box value with the value of the slider and viseversa
+    this.fhInput.value(this.fhSlider.value());
+
+    this.fhSlider.mouseMoved(function () {
+      self.fhInput.value(self.fhSlider.value());
+    });
+
+    this.fhInput.input(function () {
+      self.fhSlider.value(self.fhInput.value());
+    });
+  };
+
+  this.unselectTool = function () {
+    select("#options").html("");
   };
 }

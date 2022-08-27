@@ -11,10 +11,12 @@ function LineToTool() {
   var startMouseX = -1;
   var startMouseY = -1;
   var drawing = false;
+  var self = this;
 
   this.draw = function () {
+    strokeWeight(this.ltoSlider.value());
     // if the mouse is pressed
-    if (mouseIsPressed) {
+    if (mouseIsPressed && mouseClickedOnCanvas()) {
       //check if they startX and Y are -1. set them to the current
       //mouse X and Y if they are, also set drawing to true to control
       // the drawing or not of the line, finially request the information
@@ -40,5 +42,42 @@ function LineToTool() {
       startMouseX = -1;
       startMouseY = -1;
     }
+  };
+
+  this.populateOptions = function () {
+    // Create Slider Label
+    this.ltoLabel = createElement("label", "Size: ");
+    this.ltoLabel.parent("#options");
+    this.ltoLabel.class("label");
+
+    // Create Slider
+    this.ltoSlider = createSlider(1, 100, 1);
+    this.ltoSlider.parent("#options");
+    this.ltoSlider.class("slider");
+
+    // Create Text input field
+    this.ltoInput = createInput("");
+    this.ltoInput.parent("#options");
+    this.ltoInput.class("textBox");
+
+    // Create DIV that prevents bugs at the moment of changing between tools
+    this.ltoDiv = createDiv();
+    this.ltoDiv.parent("#options");
+
+    // Assign and update the text box value with the slider value
+    this.ltoInput.value(this.ltoSlider.value());
+
+    this.ltoSlider.mouseMoved(function () {
+      self.ltoInput.value(self.ltoSlider.value());
+    });
+
+    this.ltoInput.input(function () {
+      self.ltoSlider.value(self.ltoInput.value());
+    });
+  };
+
+  this.unselectTool = function () {
+    // Set the current tool to this tool
+    select("#options").html("");
   };
 }

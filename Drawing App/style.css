@@ -149,7 +149,7 @@ body {
 }
 /* ------------------------------ */
 
-/* STAMP Styles */
+/* Stamps extensions DOM Styles */
 .slider,
 .label {
   position: relative;
@@ -187,6 +187,7 @@ body {
   border: none;
   border-bottom: 2px black solid;
   font-size: 15px;
+  border-radius: 2px;
 }
 
 #stampSelector {
@@ -198,6 +199,7 @@ body {
   border: none;
   border-bottom: 2px black solid;
   font-size: 15px;
+  border-radius: 2px;
 }
 
 #selectorLabel {
@@ -205,5 +207,24 @@ body {
   left: 90px;
   bottom: -40px;
   border-radius: 5px;
+}
+/* ------------------------------ */
+
+/* Mirror extension DOM styles */
+#directionButton {
+  position: relative;
+  left: 70px;
+  bottom: -40px;
+  height: 25px;
+  width: 150px;
+  border: none;
+  border-bottom: 2px black solid;
+  font-size: 15px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+#directionButton:hover {
+  background-color: rgb(200, 200, 200);
 }
 /* ------------------------------ */

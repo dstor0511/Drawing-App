@@ -11,43 +11,43 @@ function StampTool() {
       // Depending on the value selected on the drop-down a different image will be loaded and its size will depend on the value given by the slider.
 
       // Cool image drawn if selected
-      if (this.selector.value() == "Cool") {
+      if (this.stampSelector.value() == "Cool") {
         image(
           coolStamp,
           mouseX,
           mouseY,
-          this.slider.value(),
-          this.slider.value()
+          this.stampSlider.value(),
+          this.stampSlider.value()
         );
       }
       // Wow image drawn if selected
-      else if (this.selector.value() == "Wow") {
+      else if (this.stampSelector.value() == "Wow") {
         image(
           wowStamp,
           mouseX,
           mouseY,
-          this.slider.value(),
-          this.slider.value()
+          this.stampSlider.value(),
+          this.stampSlider.value()
         );
       }
       // Robot image drawn if selected
-      else if (this.selector.value() == "Robot") {
+      else if (this.stampSelector.value() == "Robot") {
         image(
           robotStamp,
           mouseX,
           mouseY,
-          this.slider.value(),
-          this.slider.value()
+          this.stampSlider.value(),
+          this.stampSlider.value()
         );
       }
       // Stamp image drawn if selected
-      else if (this.selector.value() == "Stamp") {
+      else if (this.stampSelector.value() == "Stamp") {
         image(
           sticker,
           mouseX,
           mouseY,
-          this.slider.value(),
-          this.slider.value()
+          this.stampSlider.value(),
+          this.stampSlider.value()
         );
       }
     }
@@ -61,25 +61,25 @@ function StampTool() {
     );
 
     // Create a slider, input, and selector variables for easines getting their values
-    this.slider = select("#stampSlider");
-    this.sizeText = select("#stampTextBox");
-    this.selector = select("#stampSelector");
+    this.stampSlider = select("#stampSlider");
+    this.stampSizeText = select("#stampTextBox");
+    this.stampSelector = select("#stampSelector");
 
     // Assign and update the text box with the value of the slider
     // update the text box with the value of the slider
-    this.sizeText.value(this.slider.value());
-    this.slider.mouseMoved(function () {
-      self.sizeText.value(self.slider.value());
+    this.stampSizeText.value(this.stampSlider.value());
+    this.stampSlider.mouseMoved(function () {
+      self.stampSizeText.value(self.stampSlider.value());
     });
     // update the slider with the value of the text box
-    this.sizeText.input(function () {
-      self.slider.value(self.sizeText.value());
+    this.stampSizeText.input(function () {
+      self.stampSlider.value(self.stampSizeText.value());
     });
 
     // Add the options to the selector
     this.options = ["Wow", "Robot", "Cool", "Stamp"];
     for (var i = 0; i < this.options.length; i++) {
-      this.selector.option(this.options[i]);
+      this.stampSelector.option(this.options[i]);
     }
   };
 
