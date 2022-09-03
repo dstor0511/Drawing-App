@@ -1,230 +1,230 @@
 html,
 body {
-  margin: 0px;
-  height: 100%;
+    margin: 0px;
+    height: 100%;
 }
 
 #content {
-  grid-area: content;
-  width: 1215px;
+    grid-area: content;
+    width: 1215px;
 }
 
 /* Standard styles for the DOM elements created by each tool */
 .options {
-  grid-area: options;
-  position: relative;
-  right: 500px;
-  width: 500px;
-  height: 120px;
-  border-radius: 5px;
-  font-family: Verdana;
-  font-size: 18px;
+    grid-area: options;
+    position: relative;
+    right: 500px;
+    width: 500px;
+    height: 120px;
+    border-radius: 5px;
+    font-family: Verdana;
+    font-size: 18px;
 }
 /* ------------------------------ */
 
 /* Wrapper for the whole app */
 .wrapper {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 70px 1046px;
-  grid-template-rows: 35px minmax(500px, 1fr) 160px;
-  grid-template-areas:
-    "header header header"
-    "sidebar content content"
-    "colourP colourP options";
-  background-color: #fff;
-  color: #444;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 70px 1046px;
+    grid-template-rows: 35px minmax(500px, 1fr) 160px;
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "colourP colourP options";
+    background-color: #fff;
+    color: #444;
 }
 /* ------------------------------ */
 
 /* Style for all the "boxes" of the app*/
 .box {
-  background-color: rgb(240, 240, 240);
-  color: rgb(0, 0, 0);
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
 }
 /* ------------------------------ */
 
 /* Header and top bar styles */
 .header {
-  grid-area: header;
-  font-family: Verdana;
-  border-radius: 5px;
-  width: 300px;
-  position: relative;
-  left: 5px;
-  top: 3px;
+    grid-area: header;
+    font-family: Verdana;
+    border-radius: 5px;
+    width: 300px;
+    position: relative;
+    left: 5px;
+    top: 3px;
 }
 
 #title {
-  position: relative;
-  top: -45px;
-  left: 15px;
-  width: 100px;
+    position: relative;
+    top: -45px;
+    left: 15px;
+    width: 100px;
 }
 
 #clearButton {
-  width: 30px;
-  height: 30px;
-  border-style: none;
-  border-radius: 2px;
-  position: relative;
-  top: 2px;
-  left: 265px;
-  background-image: url(assets/restart.png);
-  background-size: contain;
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    border-radius: 2px;
+    position: relative;
+    top: 2px;
+    left: 265px;
+    background-image: url(assets/restart.png);
+    background-size: contain;
 }
 
 #clearButton:hover {
-  background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200);
 }
 
 #saveImageButton {
-  width: 30px;
-  height: 30px;
-  border-style: none;
-  border-radius: 2px;
-  position: relative;
-  top: 2px;
-  left: 190px;
-  background-image: url(assets/download.png);
-  background-size: contain;
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    border-radius: 2px;
+    position: relative;
+    top: 2px;
+    left: 190px;
+    background-image: url(assets/download.png);
+    background-size: contain;
 }
 
 #saveImageButton:hover {
-  background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200);
 }
 /* ------------------------------ */
 
 /* Side bar conatiner and side bar elements styles */
 #sidebar {
-  grid-area: sidebar;
-  overflow-y: scroll;
-  height: 480px;
-  width: 50px;
-  border-radius: 5px;
-  position: relative;
-  top: 10px;
-  left: 5px;
+    grid-area: sidebar;
+    overflow-y: scroll;
+    height: 480px;
+    width: 50px;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+    left: 5px;
 }
 
 .sideBarItem {
-  max-height: 50px;
-  max-width: 50px;
-  padding: 3px;
-  border-radius: 5px;
+    max-height: 50px;
+    max-width: 50px;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 .sideBarItem:hover {
-  background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200);
 }
 
 .sideBarItem img {
-  max-height: 40px;
-  max-width: 40px;
+    max-height: 40px;
+    max-width: 40px;
 }
 /* ------------------------------ */
 
 /* Color Palette div Styles */
 .colourPalette {
-  grid-area: colourP;
-  display: flex;
-  flex-direction: grid;
-  flex-flow: wrap;
-  width: 600px;
-  height: 120px;
-  position: relative;
-  left: 5px;
-  border-radius: 5px;
-  padding-top: 5px;
+    grid-area: colourP;
+    display: flex;
+    flex-direction: grid;
+    flex-flow: wrap;
+    width: 600px;
+    height: 120px;
+    position: relative;
+    left: 5px;
+    border-radius: 5px;
+    padding-top: 5px;
 }
 
 .colourSwatches {
-  box-sizing: border-box;
-  width: 40px;
-  height: 40px;
-  max-height: 40px;
-  max-width: 40px;
-  margin: 5px;
-  border-radius: 5px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    max-height: 40px;
+    max-width: 40px;
+    margin: 5px;
+    border-radius: 5px;
 }
 /* ------------------------------ */
 
 /* Stamps extensions DOM Styles */
 .slider,
 .label {
-  position: relative;
-  left: 90px;
-  bottom: -30px;
-  border-radius: 5px;
-  width: 200px;
+    position: relative;
+    left: 90px;
+    bottom: -30px;
+    border-radius: 5px;
+    width: 200px;
 }
 
 .slider {
-  -webkit-appearance: none;
-  height: 10px;
-  background-color: rgba(221, 221, 221, 0.819);
-  outline: none;
-  border-radius: 5px;
-  margin-top: 5px;
+    -webkit-appearance: none;
+    height: 10px;
+    background-color: rgba(221, 221, 221, 0.819);
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: black;
-  cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
 }
 
 .textBox {
-  width: 50px;
-  position: relative;
-  left: 100px;
-  bottom: -25px;
-  height: 25px;
-  border: none;
-  border-bottom: 2px black solid;
-  font-size: 15px;
-  border-radius: 2px;
+    width: 50px;
+    position: relative;
+    left: 100px;
+    bottom: -25px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px black solid;
+    font-size: 15px;
+    border-radius: 2px;
 }
 
-#stampSelector {
-  position: relative;
-  left: 100px;
-  bottom: -40px;
-  height: 25px;
-  width: 100px;
-  border: none;
-  border-bottom: 2px black solid;
-  font-size: 15px;
-  border-radius: 2px;
+.selector {
+    position: relative;
+    left: 100px;
+    bottom: -40px;
+    height: 25px;
+    width: 100px;
+    border: none;
+    border-bottom: 2px black solid;
+    font-size: 15px;
+    border-radius: 2px;
 }
 
 #selectorLabel {
-  position: relative;
-  left: 90px;
-  bottom: -40px;
-  border-radius: 5px;
+    position: relative;
+    left: 90px;
+    bottom: -40px;
+    border-radius: 5px;
 }
 /* ------------------------------ */
 
 /* Mirror extension DOM styles */
 #directionButton {
-  position: relative;
-  left: 70px;
-  bottom: -40px;
-  height: 25px;
-  width: 150px;
-  border: none;
-  border-bottom: 2px black solid;
-  font-size: 15px;
-  background-color: white;
-  border-radius: 2px;
+    position: relative;
+    left: 70px;
+    bottom: -40px;
+    height: 25px;
+    width: 150px;
+    border: none;
+    border-bottom: 2px black solid;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 2px;
 }
 
 #directionButton:hover {
-  background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200);
 }
 /* ------------------------------ */

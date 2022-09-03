@@ -57,7 +57,7 @@ function StampTool() {
   this.populateOptions = function () {
     // Here we create some DOM elemts the user is going to interact with when using the stamp tool
     select("#options").html(
-      "<label class='label'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider' class='slider'>  <input type='text' id='stampTextBox' class='textBox'>  <br> <label id='selectorLabel'>Choose a stamp: </label><select id='stampSelector'></select>"
+      "<label class='label'>Size: </label>  <input type='range' min='20' max='300' value='90' id='stampSlider' class='slider'>  <input type='text' id='stampTextBox' class='textBox'>  <br> <label id='selectorLabel'>Choose a stamp: </label><select class='selector'></select>"
     );
 
     // Create a slider, input, and selector variables for easines getting their values
