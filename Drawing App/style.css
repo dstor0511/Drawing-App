@@ -208,10 +208,8 @@ body {
     bottom: -40px;
     border-radius: 5px;
 }
-/* ------------------------------ */
 
-/* Mirror extension DOM styles */
-#directionButton {
+.button {
     position: relative;
     left: 70px;
     bottom: -40px;
@@ -224,7 +222,19 @@ body {
     border-radius: 2px;
 }
 
-#directionButton:hover {
+.button:hover {
     background-color: rgb(200, 200, 200);
 }
-/* ------------------------------ */
+
+#shpButton {
+    width: 75px;
+}
+
+#ascii {
+    position: relative;
+    left: 550px;
+    width: 180px;
+    height: 130px;
+    font-size: 4px;
+    font-weight: bold;
+}

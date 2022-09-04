@@ -54,6 +54,7 @@ function setup() {
     toolbox.addTool(new StampTool());
     toolbox.addTool(new EraserTool());
     toolbox.addTool(new ShapesTool());
+    toolbox.addTool(new AsciiArt());
 
     var customStmp = new Custom_stamp();
     // This "grabs" the image dropped by the user and stores it in the customStamp final_Img variable
