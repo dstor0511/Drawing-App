@@ -8,12 +8,14 @@ function AsciiArt() {
     var self = this;
 
     this.setup = function () {};
-    noCanvas();
     video = createCapture(VIDEO);
-    video.size(50, 24);
+    video.size(80, 40);
     video.hide();
+
+    select("#ascii").hide();
+
     this.draw = function () {
-        this.density = "Ñ@#W$9876543210?!abc;:+=-,._";
+        this.density = "Ñ@#W$9876543210?!abc;:+=-,._ ";
 
         video.loadPixels();
         this.asciiImage = "";
@@ -36,7 +38,21 @@ function AsciiArt() {
     };
 
     this.populateOptions = function () {
+        select("#ascii").show();
+
         asciiDiv = createDiv();
         asciiDiv.parent("#ascii");
+
+        asciiInstructionsDiv = createDiv(
+            "Grant camera access to see ascii art, smile! 😁"
+        );
+        asciiInstructionsDiv.parent("#options");
+    };
+
+    this.unselectTool = function () {
+        asciiDiv.remove();
+        loadPixels();
+        select("#ascii").hide();
+        select("#options").html("");
     };
 }

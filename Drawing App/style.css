@@ -13,7 +13,7 @@ body {
 .options {
     grid-area: options;
     position: relative;
-    right: 500px;
+    right: 350px;
     width: 500px;
     height: 120px;
     border-radius: 5px;
@@ -232,9 +232,19 @@ body {
 
 #ascii {
     position: relative;
-    left: 550px;
-    width: 180px;
-    height: 130px;
-    font-size: 4px;
-    font-weight: bold;
+    left: 407.5px;
+    top: 100px;
+    width: 500px;
+    height: 360px;
+    font-size: 8.5px;
+    font-family: monospace;
+    background-color: transparent;
+}
+
+#instructions {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    font-size: 12px;
+    text-align: center;
 }
