@@ -48,14 +48,6 @@ function Custom_stamp() {
         this.cStampInput.parent("#options");
         this.cStampInput.class("textBox");
 
-        // Create instrucion label
-        // this.cStampInstructions = createElement(
-        //     "label",
-        //     "Drop an image on your Canvas, then click on the Canvas to paste it"
-        // );
-        // this.cStampInstructions.parent("#options");
-        // this.cStampInstructions.id("instructions");
-
         // Create DIV that prevents bugs at the moment of changing between tools
         this.csDiv = createDiv(
             "Drop an image on your Canvas, then click on the Canvas to paste it"

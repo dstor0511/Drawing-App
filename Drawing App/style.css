@@ -248,3 +248,13 @@ body {
     font-size: 12px;
     text-align: center;
 }
+
+#asciiInstructions {
+    text-align: left;
+    justify-content: center;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    font-size: 18px;
+    width: 450px;
+}

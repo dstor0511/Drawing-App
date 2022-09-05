@@ -9,7 +9,7 @@ function ShapesTool() {
     this.draw = function () {
         if (mouseIsPressed && mouseClickedOnCanvas()) {
             if (startMouseX == -1) {
-                // Update the variables to the current mouse position
+                // Update the variables to the current mouse position and loadup the information of the canvas
                 startMouseX = mouseX;
                 startMouseY = mouseY;
                 drawing = true;
@@ -17,6 +17,7 @@ function ShapesTool() {
             } else {
                 updatePixels();
                 if (this.shpSelector.value() == "Circle") {
+                    // Draw an ellipse if this value is selected
                     ellipse(
                         startMouseX,
                         startMouseY,
@@ -24,6 +25,7 @@ function ShapesTool() {
                         mouseX - startMouseX
                     );
                 } else if (this.shpSelector.value() == "Rectangle") {
+                    // Draw a rectangle if this value is selected
                     rect(
                         startMouseX,
                         startMouseY,
@@ -31,6 +33,7 @@ function ShapesTool() {
                         mouseY - startMouseY
                     );
                 } else if (this.shpSelector.value() == "Triangle") {
+                    // Draw a triangle if this value is selected
                     triangle(
                         startMouseX,
                         startMouseY,
@@ -42,6 +45,7 @@ function ShapesTool() {
                 }
             }
         } else if (drawing) {
+            // Reset the variables to their default values so that the next time the user clicks, the shape will be drawn from the start
             drawing = false;
             startMouseX = -1;
             startMouseY = -1;
@@ -55,6 +59,7 @@ function ShapesTool() {
         shpButton.class("button");
         shpButton.id("shpButton");
 
+        // mouse pressed function that controls the fill of the shapes and also updates the button text
         shpButton.mousePressed(function () {
             if (colourP.fill == true) {
                 fill(colourP.selectedColour);
